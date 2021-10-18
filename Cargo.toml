@@ -8,6 +8,10 @@ description = "Bindings to GSD's C API"
 license = "MIT"
 keywords = ["gsd", "hoomd", "md", "io", "ffi"]
 
+[lib]
+name = "gsd_sys"
+path = "src/lib.rs"
+
 [dev-dependencies]
 rand = "0.8.4"
 

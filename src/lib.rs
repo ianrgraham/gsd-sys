@@ -138,7 +138,6 @@ mod tests {
         safely_remove_file_if_exists(&rusty_fname);
     }
 
-    #[test]
     fn write_and_read_file_random() {
 
         fn gsd_create_and_open(fname: &String) -> Result<gsd::gsd_handle,()> {
