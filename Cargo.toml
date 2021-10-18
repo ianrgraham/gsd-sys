@@ -8,7 +8,7 @@ description = "Bindings to GSD's C API"
 license = "MIT"
 keywords = ["gsd", "hoomd", "md", "io", "ffi"]
 
-[dependencies]
+[dev-dependencies]
 rand = "0.8.4"
 
 [build-dependencies]

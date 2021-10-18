@@ -138,6 +138,7 @@ mod tests {
         safely_remove_file_if_exists(&rusty_fname);
     }
 
+    #[test]
     fn write_and_read_file_random() {
 
         fn gsd_create_and_open(fname: &String) -> Result<gsd::gsd_handle,()> {
@@ -234,7 +235,7 @@ mod tests {
         }
 
         impl<const N: usize> Snapshot<N> {
-            fn new_rand(time: &usize, rng: &mut ThreadRng) -> Self {
+            fn new_rand(time: usize, rng: &mut ThreadRng) -> Self {
                 let mut pos = [[0.0f64; 3]; N];
                 let mut vel = [[0.0f64; 3]; N];
                 for i in 0..N {
@@ -269,7 +270,7 @@ mod tests {
 
             fn progress_fake_sim_and_add_frame(&mut self) {
                 self.current_time += 1000;
-                let snap = Snapshot::<N>::new_rand(&self.current_time, &mut self.rng);
+                let snap = Snapshot::<N>::new_rand(self.current_time, &mut self.rng);
                 self.frames.push(snap);
             }
 

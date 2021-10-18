@@ -14,5 +14,5 @@ publishing it on crates.io alongside a high-level API):
 
 ```toml
 [dependencies]
-gsd-sys = { path = "path/to/gsd-sys" }
+gsd-sys = { git = "https://github.com/ianrgraham/gsd-sys.git" }
 ```
