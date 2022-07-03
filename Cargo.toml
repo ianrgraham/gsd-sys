@@ -1,8 +1,8 @@
 [package]
 name = "gsd-sys"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Ian Graham"]
-edition = "2018"
+edition = "2021"
 build = "build.rs"
 description = "Bindings to GSD's C API"
 license = "MIT"
@@ -16,5 +16,5 @@ path = "src/lib.rs"
 rand = "0.8.4"
 
 [build-dependencies]
-bindgen = "*"
-cmake = "0.1.31"
+bindgen = "0.60"
+cmake = "0.1"
