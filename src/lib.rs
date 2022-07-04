@@ -4,7 +4,7 @@
 #![allow(dead_code)]
 #![allow(deref_nullptr)]
 
-include!(concat!(env!("OUT_DIR"), concat!("/", "bindings", ".rs")));
+// include!(concat!(env!("OUT_DIR"), concat!("/", "bindings", ".rs")));
 mod bindings;
 pub use crate::bindings::*;
 

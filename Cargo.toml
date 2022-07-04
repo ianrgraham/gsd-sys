@@ -12,6 +12,8 @@ keywords = ["gsd", "hoomd", "md", "io", "ffi"]
 name = "gsd_sys"
 path = "src/lib.rs"
 
+# TODO - add optional feature to rebuild wrapper locally
+
 [dev-dependencies]
 rand = "0.8.4"
 
