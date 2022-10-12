@@ -373,7 +373,7 @@ inline static int gsd_name_id_map_insert(struct gsd_name_id_map* map, const char
 
     @returns The ID if found, or UINT16_MAX if not found.
 */
-inline static uint16_t gsd_name_id_map_find(struct gsd_name_id_map* map, const char* str)
+inline static uint16_t gsd_name_id_map_find(const struct gsd_name_id_map* map, const char* str)
     {
     if (map == NULL || map->v == NULL || map->size == 0)
         {
@@ -2025,7 +2025,7 @@ int gsd_write_chunk(struct gsd_handle* handle,
     return GSD_SUCCESS;
     }
 
-uint64_t gsd_get_nframes(struct gsd_handle* handle)
+uint64_t gsd_get_nframes(const struct gsd_handle* handle)
     {
     if (handle == NULL)
         {
@@ -2035,7 +2035,7 @@ uint64_t gsd_get_nframes(struct gsd_handle* handle)
     }
 
 const struct gsd_index_entry*
-gsd_find_chunk(struct gsd_handle* handle, uint64_t frame, const char* name)
+gsd_find_chunk(const struct gsd_handle* handle, uint64_t frame, const char* name)
     {
     if (handle == NULL)
         {
@@ -2129,7 +2129,7 @@ gsd_find_chunk(struct gsd_handle* handle, uint64_t frame, const char* name)
     return NULL;
     }
 
-int gsd_read_chunk(struct gsd_handle* handle, void* data, const struct gsd_index_entry* chunk)
+int gsd_read_chunk(const struct gsd_handle* handle, void* data, const struct gsd_index_entry* chunk)
     {
     if (handle == NULL)
         {
@@ -2224,7 +2224,7 @@ size_t gsd_sizeof_type(enum gsd_type type)
     }
 
 const char*
-gsd_find_matching_chunk_name(struct gsd_handle* handle, const char* match, const char* prev)
+gsd_find_matching_chunk_name(const struct gsd_handle* handle, const char* match, const char* prev)
     {
     if (handle == NULL)
         {

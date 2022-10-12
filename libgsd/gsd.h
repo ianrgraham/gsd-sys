@@ -513,7 +513,7 @@ extern "C"
         @return A pointer to the found chunk, or NULL if not found.
     */
     const struct gsd_index_entry*
-    gsd_find_chunk(struct gsd_handle* handle, uint64_t frame, const char* name);
+    gsd_find_chunk(const struct gsd_handle* handle, uint64_t frame, const char* name);
 
     /** Read a chunk from the GSD file
 
@@ -533,7 +533,7 @@ extern "C"
           - GSD_ERROR_FILE_MUST_BE_READABLE: The file was opened in append mode.
           - GSD_ERROR_FILE_CORRUPT: The GSD file is corrupt.
     */
-    int gsd_read_chunk(struct gsd_handle* handle, void* data, const struct gsd_index_entry* chunk);
+    int gsd_read_chunk(const struct gsd_handle* handle, void* data, const struct gsd_index_entry* chunk);
 
     /** Get the number of frames in the GSD file
 
@@ -543,7 +543,7 @@ extern "C"
 
         @return The number of frames in the file, or 0 on error.
     */
-    uint64_t gsd_get_nframes(struct gsd_handle* handle);
+    uint64_t gsd_get_nframes(const struct gsd_handle* handle);
 
     /** Query size of a GSD type ID.
 
@@ -570,7 +570,7 @@ extern "C"
         *prev* is invalid
     */
     const char*
-    gsd_find_matching_chunk_name(struct gsd_handle* handle, const char* match, const char* prev);
+    gsd_find_matching_chunk_name(const struct gsd_handle* handle, const char* match, const char* prev);
 
     /** Upgrade a GSD file to the latest specification.
 

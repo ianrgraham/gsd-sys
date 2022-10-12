@@ -1984,7 +1984,7 @@ extern "C" {
     #[doc = ""]
     #[doc = "@return A pointer to the found chunk, or NULL if not found."]
     pub fn gsd_find_chunk(
-        handle: *mut gsd_handle,
+        handle: *const gsd_handle,
         frame: u64,
         name: *const ::std::os::raw::c_char,
     ) -> *const gsd_index_entry;
@@ -2008,7 +2008,7 @@ extern "C" {
     #[doc = "- GSD_ERROR_FILE_MUST_BE_READABLE: The file was opened in append mode."]
     #[doc = "- GSD_ERROR_FILE_CORRUPT: The GSD file is corrupt."]
     pub fn gsd_read_chunk(
-        handle: *mut gsd_handle,
+        handle: *const gsd_handle,
         data: *mut ::std::os::raw::c_void,
         chunk: *const gsd_index_entry,
     ) -> ::std::os::raw::c_int;
@@ -2021,7 +2021,7 @@ extern "C" {
     #[doc = "@pre *handle* was opened by gsd_open()."]
     #[doc = ""]
     #[doc = "@return The number of frames in the file, or 0 on error."]
-    pub fn gsd_get_nframes(handle: *mut gsd_handle) -> u64;
+    pub fn gsd_get_nframes(handle: *const gsd_handle) -> u64;
 }
 extern "C" {
     #[doc = " Query size of a GSD type ID."]
@@ -2048,7 +2048,7 @@ extern "C" {
     #[doc = "@return Pointer to a string, NULL if no more matching chunks are found found, or NULL if"]
     #[doc = "prev* is invalid"]
     pub fn gsd_find_matching_chunk_name(
-        handle: *mut gsd_handle,
+        handle: *const gsd_handle,
         match_: *const ::std::os::raw::c_char,
         prev: *const ::std::os::raw::c_char,
     ) -> *const ::std::os::raw::c_char;
